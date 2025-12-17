@@ -276,6 +276,7 @@ fun ExpenseTracker() {
                             verticalAlignment = Alignment.CenterVertically   // Designed until here.
                         ) {
                             Row(
+                                modifier = Modifier.weight(1f),
                                 verticalAlignment = Alignment.CenterVertically,
                                 horizontalArrangement = Arrangement.spacedBy(12.dp)
                             ) {
@@ -294,17 +295,22 @@ fun ExpenseTracker() {
                                     ) // done till here
                                 }
                             }
-                            Text(
-                                text = expense.description,
-                                style = MaterialTheme.typography.bodyLarge,
-                                fontWeight = FontWeight.Medium,
-                                color = Color(0xFF1A1A1A)
-                            )
-                            Text(
-                                text = expense.date,
-                                style = MaterialTheme.typography.bodySmall,
-                                color = Color(0xFF999999)
-                            )
+                            Column(
+                                modifier = Modifier.weight(1f)
+                            ) {
+                                Text(
+                                    text = expense.description,
+                                    style = MaterialTheme.typography.bodyLarge,
+                                    fontWeight = FontWeight.Medium,
+                                    color = Color(0xFF1A1A1A),
+                                    //maxLines = 2
+                                )
+                                Text(
+                                    text = expense.date,
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = Color(0xFF999999)
+                                )
+                            }
                             Row(
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
